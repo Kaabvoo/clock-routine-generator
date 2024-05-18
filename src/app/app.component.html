@@ -2,21 +2,18 @@
     <div class="col-span-2 row-span-1 rounded-lg grid grid-cols-3">
         <span>1</span>
         <span>2</span>
-        <div class="flex justify-end align-middle">
-            <button class="rounded-xl bg-bb flex p-3 text-bbbb hover:bg-bbb">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-                <span>Add</span>
-            </button>
-        </div>
+        <span>3</span>
     </div>
-    <div class="col-span-1 row-span-10 rounded-lg shadow-right flex justify-center items-center">
-        <span>ABC</span>
+    <div class="col-span-1 row-span-11 rounded-lg shadow-m-center flex justify-center items-center">
+        @for (clock of this.clock.getTestSubject() | async; track $index) {
+        <span>{{clock | json}}</span>
+        }
     </div>
-    <span class="col-span-1 row-span-10 rounded-lg shadow-left flex justify-center items-center">
+    <span class="col-span-1 row-span-11 rounded-lg shadow-m-center flex justify-center items-center">
         <span>ABC</span>
     </span>
-    <span class="col-span-2 row-span-1 rounded-lg">Footer</span>
 </div>
+
+<button class="button button__add">
+    ➕
+</button>
